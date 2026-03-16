@@ -1,0 +1,16 @@
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+for col in df.columns:
+    
+    plt.figure(figsize=(10,4))
+    
+    plt.subplot(1,2,1)
+    sns.histplot(df[col], kde=True)
+    plt.title("Distribution of " + col)
+    
+    plt.subplot(1,2,2)
+    sns.boxplot(x=df[col])
+    plt.title("Outlier of " + col)
+    
+    plt.show()
